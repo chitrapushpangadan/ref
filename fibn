@@ -1,0 +1,26 @@
+//var resArray = [];
+
+
+//console.log('xdf');
+
+fibFn = (n) => {
+  let cVal = 0;
+  let nVal = 1;
+  let iter = 1;
+  var tempArr = [1];
+ // console.log(tempArr)
+  while(iter <= n){
+    let pushVal = cVal ===0 ? nVal : cVal + nVal;
+   // console.log(cVal + nVal)
+    tempArr.push(pushVal);
+   // console.log(tempArr);
+    
+    nVal = cVal === 0 ? 1 : tempArr[iter-1];
+    cVal = cVal === 0 ? 1 :pushVal;
+    console.log(nVal);
+    iter++;
+  }
+  console.log(tempArr);
+  return tempArr;
+}
+let [...resArr]= fibFn(7);
