@@ -1,0 +1,21 @@
+
+//Sum
+const sum = (arr) => arr.reduce((a, b) => (a + b), 0)
+let val =sum([1, 2, 3, 4]) // output: 10
+console.log(val);
+
+//ultiply
+const mul = (arr) => arr.reduce((a, b) => (a * b), 1)
+console.log(mul([1, 2, 3, 4]));
+
+// Swap variables :Using Array Destructuring to swap values
+
+ let a = 'world', b = 'hello';
+[a, b] = [b, a]
+console.log(a) // -> hello
+console.log(b) // -> world
+
+// Find max value
+const max = (arr) => Math.max(...arr);
+max([123, 321, 32]);
+console.log(a)// outputs: 321
