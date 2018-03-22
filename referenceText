@@ -1,0 +1,21 @@
+
+Component based Ui dev:
+-----------------------------
+
+Eg: Chart componet
+- a component for eg: column chart
+- many such component form a library
+  - Reusable
+  - Speed up developement
+  - UX consistency 
+  - Easy enhancements and change handling
+  
+  Implementation
+  --------------
+  - find out/identify the candidate feature
+  - find the library 
+  - design and build
+  .....
+  
+  
+
