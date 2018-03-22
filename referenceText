@@ -17,5 +17,36 @@ Eg: Chart componet
   - design and build
   .....
   
+  REACT SPECIFIC
+  --------------------
+  start building a new React single page application : create-react-app
   
 
+Components:
+-----------
+Presentational/Functional/Stateless
+- presentaion - how things look - rendering
+- Mostly stateless
+- wont use lifecycle methods
+- dont specify how the data is loaded
+Eg : User info, menubar
+
+Container/Class/Stateful
+- how things work
+- data fetching
+- act as data sources/providers to other components
+
+
+Properties:
+-------------
+
+Props 
+- how components talk to each other
+- unidirectional :parent ->children
+- immutable
+- 
+
+States:
+- what if component doenot receive data:
+- keep track of information in between any renders that it does. 
+- When you setState it updates the state object and then re-renders the component
