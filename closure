@@ -1,0 +1,35 @@
+function noClos () {
+  for (var i = 0; i < 10; i++) {
+  
+     // function timer(j){
+
+        setTimeout(function() {
+          console.log('from noClos' + i);
+       }, 1000);
+
+      //}
+
+     // timer(i);
+
+    }
+}
+
+function Clos () {
+
+  for (var k = 0; k < 10; k++) {
+
+    function timer(m){//added closure
+
+      setTimeout(function() {
+        console.log('From Clos '+m);//will access the variable in the scope of the parent
+     }, 1000);
+
+    }
+
+    timer(k);
+
+  }
+}
+
+noClos();
+Clos();
