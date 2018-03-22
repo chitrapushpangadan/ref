@@ -1,0 +1,57 @@
+var customer = {
+  firstName: "John",
+  lastName: "Doe",
+  greetCustomer: function(){
+    console.log("Hello again " + this.firstName + " " + this.lastName + "!"); 
+  },
+  whatIsMyObject: function() {
+    console.log(this);
+  },
+  address: {// To test call
+    askAddress: function(){
+      console.log("Dear " + this.firstName + ", please enter your address");
+    },
+    whatIsMyObject: function() {
+    	console.log(this);
+  	}
+  },
+  
+  calculateAge: function(currentYear, birthDate){
+       console.log(this.firstName + " is " + (currentYear - birthDate) + " years old.");
+  }
+}
+
+var customer2 = {
+  firstName: "Jane",
+  lastName: "Smith"
+}
+
+var customer3 = {
+  firstName: "Robert",
+  lastName: "Mills"
+}
+
+//================================================
+customer.address.askAddress(); // Prints "Dear undefined, please enter your address"
+customer.address.whatIsMyObject(); // Prints the object "address" in the console
+
+customer.address.askAddress.call(customer);//By using the callmethod, we can change what we want the value of this to be : here we are going to change the value of this to be the customer object:
+
+customer.calculateAge(2016, 1956); // Prints "John is 60 years old."
+
+customer.calculateAge.call(2016, 1956); // undefined is NaN years old. 
+
+customer.calculateAge.call(customer2,2016, 1956);//Jane is 60 years old. Using the call function, we pass arguments separated by a comma,
+customer.calculateAge.apply(customer2,[2016, 1956]);//Jane is 60 years old. Using the apply function, we pass arguments as values in an array
+
+//bind works just like call, but instead of calling the function right away, it returns a function definition, with this set to the first parameter passed to bind().
+
+console.log(customer.calculateAge.bind(customer3));// Prints:function () { [native code] } 
+
+var fnReutuned = customer.calculateAge.bind(customer3);
+fnReutuned(2016, 1956);//Robert is 60 years old. 
+
+
+//bind allows us to explicitly set this to the object we want. It generates a copy of the calculateAge function that we stored in the variable ageOfCustomer3, but it doesn't immediately call the function.
+
+//We can call the function later on in the code and pass it the arguments it needs to execute. It can be extremely useful to create functions with preset arguments that will be called later, with this already set to the right object.
